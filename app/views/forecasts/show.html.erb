@@ -1,6 +1,16 @@
-this is a forecast
+<h1>
+  Weather for <%= @location_name %>
+</h1>
 
-location is <%= @location %>
+<br>
+Conditions: <%= @forecast.conditions %>
+<br>
+Current temperature: <%= @forecast.temperature %>
+<br>
+Wind: <%= @forecast.wind_speed %> mph, <%= @forecast.wind_direction %>
 
 
-the response was <%= @weather %>
+
+<% if @cached_forecast %>
+  <p> cached forecast for <%= @postal_code %> generated at <%= @forecast.created_at %>  </p>
+<% end %>
