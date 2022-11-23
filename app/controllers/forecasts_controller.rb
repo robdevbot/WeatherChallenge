@@ -19,7 +19,7 @@ class ForecastsController < ActionController::Base
     thirty_minutes_ago = Time.now - 30.minutes
 
     existing_forecasts = Forecast.where('created_at >= :time AND postal_code == :found_code', time: thirty_minutes_ago, found_code: postal_code)
-        
+
     if existing_forecasts.any?
       @cached_forecast = true
       @forecast = existing_forecasts.last
@@ -49,7 +49,7 @@ class ForecastsController < ActionController::Base
       address_component['types'].include?('postal_code')
     end
 
-    @postal_code = postal_code_component['long_name']
+    @postal_code = postal_code_component['long_name'] if postal_code_component.present?
 
     location = {
       'longitude' => longitude,
