@@ -22,9 +22,7 @@ class ForecastsController < ActionController::Base
     # https://open-meteo.com/en/docs#api-documentation
     longitude, latitude, @location_name = get_coordinates(location)
 
-    open_meteo_url = "https://api.open-meteo.com/v1/forecast?latitude=#{latitude}&longitude=#{longitude}"
-
-    puts "open_meteo_url: #{open_meteo_url}"
+    open_meteo_url = "https://api.open-meteo.com/v1/forecast?latitude=#{latitude}&longitude=#{longitude}&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch"
     
     response_body = make_json_api_request(open_meteo_url)
 
