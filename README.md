@@ -6,4 +6,5 @@ The application uses the Google Maps API to retreive location coordinates from a
 
 More information on these APIs:
 https://developers.google.com/maps/documentation/geocoding  
+
 https://open-meteo.com/en
