@@ -25,7 +25,7 @@ class ForecastsController < ActionController::Base
       @forecast = existing_forecasts.last
     else
       @cached_forecast = false
-      get_weather(longitude, latitude)
+      @forecast = get_weather(longitude, latitude)
     end
 
     render 'show'
