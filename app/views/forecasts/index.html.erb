@@ -1,0 +1,6 @@
+<%= form_with url: "/forecast", method: :post do |form| %>
+  <%= form.label :location, "Location:" %>
+  <%= form.text_field :location %>
+  <br>
+  <%= form.submit "Go" %>
+<% end %>
